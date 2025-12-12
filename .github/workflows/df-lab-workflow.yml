@@ -36,7 +36,7 @@ jobs:
               "test": {
                 "type": "APPIUM_NODE",
                 "testPackageArn": "arn:aws:devicefarm:us-west-2:653827629504:upload:45a3ed36-19e7-442d-9bdd-17e4205ab634/2fd35103-a952-4137-b2d4-3881d34ea745",
-                "testSpecArn": "arn:aws:devicefarm:us-west-2::upload:100e31e8-12ac-11e9-ab14-d663b5a4a901"
+                "testSpecArn": "arn:aws:devicefarm:us-west-2::upload:100e31e8-12ac-11e9-ab14-d663b5a4a907"
               },
               "configuration": {
                 "locale": "en_US",
