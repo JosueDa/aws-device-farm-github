@@ -41,9 +41,7 @@ jobs:
               "configuration": {
                 "locale": "en_US",
                 "location": { "latitude": 47.6204, "longitude": -122.3491 },
-                "customerArtifactPaths": {
-                  "deviceHostPaths": ["$WORKING_DIRECTORY"]
-                },
+                "customerArtifactPaths": { "deviceHostPaths": ["$WORKING_DIRECTORY"] },
                 "radios": { "wifi": true, "bluetooth": false, "nfc": true, "gps": true },
                 "billingMethod": "METERED"
               },
