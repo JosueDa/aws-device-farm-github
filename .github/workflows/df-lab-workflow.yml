@@ -32,11 +32,11 @@ jobs:
               "name": "GitHubAction-${{ github.workflow }}_${{ github.run_id }}_${{ github.run_attempt }}",
               "projectArn": "arn:aws:devicefarm:us-west-2:653827629504:project:45a3ed36-19e7-442d-9bdd-17e4205ab634",
               "appArn": "arn:aws:devicefarm:us-west-2:653827629504:upload:45a3ed36-19e7-442d-9bdd-17e4205ab634/beeee8c0-ecc5-4403-a4e9-23576eda0d4e",
-              "devicePoolArn": "arn:aws:devicefarm:us-west-2:653827629504:devicepool:<AQUI_TU_DEVICE_POOL>",
+              "devicePoolArn": "arn:aws:devicefarm:us-west-2::devicepool:082d10e5-d7d7-48a5-ba5c-b33d66efa1f5",
               "test": {
                 "type": "APPIUM_NODE",
-                "testPackageArn": "arn:aws:devicefarm:us-west-2:653827629504:upload:<ARN_DEL_ZIP_DE_TEST>",
-                "testSpecArn": "arn:aws:devicefarm:us-west-2:653827629504:upload:<ARN_DEL_TEST_SPEC>"
+                "testPackageArn": "arn:aws:devicefarm:us-west-2:653827629504:upload:45a3ed36-19e7-442d-9bdd-17e4205ab634/2fd35103-a952-4137-b2d4-3881d34ea745",
+                "testSpecArn": "arn:aws:devicefarm:us-west-2::upload:100e31e8-12ac-11e9-ab14-d663b5a4a901"
               },
               "configuration": {
                 "locale": "en_US",
