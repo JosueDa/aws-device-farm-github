@@ -13,6 +13,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+
       - name: Checkout repo
         uses: actions/checkout@v3
 
@@ -29,31 +30,21 @@ jobs:
           run-settings-json: |
             {
               "name": "GitHubAction-${{ github.workflow }}_${{ github.run_id }}_${{ github.run_attempt }}",
-              "projectArn": "Device Farm Workshop",
-              "appArn": "AWSDeviceFarmAndroidReferenceApp.apk",
-              "devicePoolArn": "Top Devices",
+              "projectArn": "arn:aws:devicefarm:us-west-2:653827629504:project:45a3ed36-19e7-442d-9bdd-17e4205ab634",
+              "appArn": "arn:aws:devicefarm:us-west-2:653827629504:upload:45a3ed36-19e7-442d-9bdd-17e4205ab634/beeee8c0-ecc5-4403-a4e9-23576eda0d4e",
+              "devicePoolArn": "arn:aws:devicefarm:us-west-2:653827629504:devicepool:<AQUI_TU_DEVICE_POOL>",
               "test": {
                 "type": "APPIUM_NODE",
-                "testPackageArn": "MySampleAndroidTests.zip",
-                "testSpecArn": "webdriverio_spec_file.yml"
+                "testPackageArn": "arn:aws:devicefarm:us-west-2:653827629504:upload:<ARN_DEL_ZIP_DE_TEST>",
+                "testSpecArn": "arn:aws:devicefarm:us-west-2:653827629504:upload:<ARN_DEL_TEST_SPEC>"
               },
               "configuration": {
                 "locale": "en_US",
-                "location": {
-                  "latitude": 47.6204,
-                  "longitude": -122.3491
-                },
+                "location": { "latitude": 47.6204, "longitude": -122.3491 },
                 "customerArtifactPaths": {
-                  "deviceHostPaths": [
-                    "$WORKING_DIRECTORY"
-                  ]
+                  "deviceHostPaths": [ "$WORKING_DIRECTORY" ]
                 },
-                "radios": {
-                  "wifi": true,
-                  "bluetooth": false,
-                  "nfc": true,
-                  "gps": true
-                },
+                "radios": { "wifi": true, "bluetooth": false, "nfc": true, "gps": true },
                 "billingMethod": "METERED"
               },
               "executionConfiguration": {
@@ -68,7 +59,8 @@ jobs:
           upload-poll-interval: 1000
           run-poll-interval: 30000
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload results artifacts
+        uses: actions/upload-artifact@v4
         with:
           name: AutomatedTestOutputFiles
           path: ${{ steps.RunTest.outputs.artifact-folder }}
